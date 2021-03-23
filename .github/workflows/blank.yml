@@ -25,3 +25,6 @@ jobs:
         
       - name: Run a one-line script
         run: ls -l && pwd
+        
+      - name: can use aws command?
+        run: aws --version
