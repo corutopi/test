@@ -24,4 +24,4 @@ jobs:
         run: echo good evening
         
       - name: Run a one-line script
-        run: ls -l
+        run: ls -l && pwd
