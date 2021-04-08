@@ -28,3 +28,6 @@ jobs:
         
       - name: can use aws command?
         run: aws --version
+        
+      - name: use github action context
+        run: echo ${{ github.ref }}
