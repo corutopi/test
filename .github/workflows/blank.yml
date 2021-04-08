@@ -44,7 +44,7 @@ jobs:
       
       - name: use env 2
         env:
-          BAR2: ${BAR}
+          BAR2: "${BAR}"
         run: |
           echo ${BAR}
           echo ${{ env.BAR2 }}
