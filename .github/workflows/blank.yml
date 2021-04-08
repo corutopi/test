@@ -40,3 +40,12 @@ jobs:
           TEST=ABC
           echo ${{ env.TEST }}
           echo $TEST
+          BAR=bar
+      
+      - name: use env 2
+        env:
+          BAR2: ${BAR}
+        run: |
+          echo ${BAR}
+          echo ${{ env.BAR2 }}
+      
