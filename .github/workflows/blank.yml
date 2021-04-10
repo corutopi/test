@@ -33,19 +33,16 @@ jobs:
       - name: use github action context
         run: echo ${{ github.ref }}
       
-      - name: use env
+      - name: set env
+        id: set-env
         run: |
-          echo ${{ env.TEST }}
-          echo $TEST
-          TEST=ABC
-          echo ${{ env.TEST }}
-          echo $TEST
-          BAR=bar
+          TESTENV=hogehoge
+          echo ::set-output name=version::${TESTENV}
       
-      - name: use env 2
+      - name: use env
         env:
-          BAR2: "${BAR}"
+          VERSION: ${{ steps.set-env.outputs.version }}
         run: |
-          echo ${BAR}
-          echo ${{ env.BAR2 }}
+          echo version=${VERSION}
+      
       
